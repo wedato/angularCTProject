@@ -11,9 +11,7 @@ export class AnnonceComponent implements OnInit {
    content = 'content de base';
 
 
-  // annonce: Array<{machin:string,}> = [
-  //   {machin:'thug'}
-  // ];
+
 
   constructor() { }
 
