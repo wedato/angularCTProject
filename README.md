@@ -8,7 +8,7 @@
 
 ***
 
-##Question 1  
+## Question 1  
 
 
 Initialisation du dépôt
@@ -40,7 +40,10 @@ Run `ng generate component component-name` to generate a new component.
 
 ***
 
-##Question 2
+## Question 2
 
-ng g c accueil --skip-tests
+ng g c accueil --skip-tests  
+
 ng g c annonce --skip-tests
+
+***
