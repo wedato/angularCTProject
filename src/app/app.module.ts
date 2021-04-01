@@ -4,11 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AnnonceComponent } from './annonce/annonce.component';
-import {RouterModule} from '@angular/router';
+import {RouterModule , Routes} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 
-// @ts-ignore
-const appRoutes: Route =  [
+
+
+
+const route: Routes =  [
   { path: 'annonce' , component : AnnonceComponent},
   { path: '' , component: AccueilComponent},
 ];
@@ -21,7 +24,8 @@ const appRoutes: Route =  [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(route),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
