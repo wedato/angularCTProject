@@ -14,6 +14,7 @@ export class AnnonceService {
   private lesAnnonces: Annonce[] = [];
   annoncesSubject = new Subject<Annonce[]>();
 
+
   constructor() {
     faker.setLocale('fr');
     for (let i = 0 ; i < 5 ; i++) {
@@ -33,6 +34,10 @@ export class AnnonceService {
     this.emitAnnonces();
   }
 
+  deleteAnnonce(annonce: Annonce){
+
+    this.lesAnnonces = this.lesAnnonces.filter(a => a.id !== annonce.id );
+  }
 
 
 

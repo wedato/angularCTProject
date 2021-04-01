@@ -23,7 +23,6 @@
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let annonce of lesAnnonces">
-      <h3>{{annonce.title}} -- id : {{annonce.id}}</h3>
-    <p>{{annonce.content}}</p>
+    <app-detail-annonce [annonce]="annonce" (deleteAnnonce)="deleteAnnonce($event)"></app-detail-annonce>
   </li>
 </ul>

@@ -31,4 +31,10 @@ export class ListAnnoncesComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.annoncesSubscription.unsubscribe();
   }
+
+  deleteAnnonce(annonce: Annonce) {
+
+     this.annonceService.deleteAnnonce(annonce);
+     this.lesAnnonces = this.annonceService.getLesAnnonces();
+  }
 }

@@ -9,6 +9,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ListAnnoncesComponent } from './list-annonces/list-annonces.component';
 import {AnnonceService} from './services/annonce.service';
 import { NewAnnonceComponent } from './new-annonce/new-annonce.component';
+import { EditAnnonceComponent } from './edit-annonce/edit-annonce.component';
+import { DetailAnnonceComponent } from './detail-annonce/detail-annonce.component';
+
 
 
 
@@ -18,6 +21,7 @@ const route: Routes =  [
   { path: 'annonce' , component : AnnonceComponent},
   {path: 'listeAnnonce' , component: ListAnnoncesComponent},
   {path: 'newAnnonce' ,component: NewAnnonceComponent },
+  {path: 'editAnnonce/:id', component: EditAnnonceComponent},
   { path: '' , component: AccueilComponent},
 ];
 
@@ -27,7 +31,9 @@ const route: Routes =  [
     AccueilComponent,
     AnnonceComponent,
     ListAnnoncesComponent,
-    NewAnnonceComponent
+    NewAnnonceComponent,
+    EditAnnonceComponent,
+    DetailAnnonceComponent,
   ],
   imports: [
     BrowserModule,
