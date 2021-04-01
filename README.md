@@ -13,17 +13,14 @@ Initialisation du dépôt
 
 3.git commit -m "Initial Commit"  
 
-4. git clone https://o2150351@pdicost.univ-orleans.fr/git/scm/ctfram/angm3_1.git  
+4.git clone https://o2150351@pdicost.univ-orleans.fr/git/scm/ctfram/angm3_1.git  
 
-
-5. git push -u origin master  
-
+5.git push -u origin master  
    
-6. Je tague la question 1  
+6.Je tague la question 1  
 
-
-1.git tag -a Question1 -m 'question 1'
-2.git push origin Question1
+  1.git tag -a Question1 -m 'question 1'
+  2.git push origin Question1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
