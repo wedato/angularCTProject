@@ -48,16 +48,5 @@ ng g c annonce --skip-tests
 
 ***
 
-## Question 3 
-
-npm install bootstrap@3.3.7 --save  
-(bien penser à configrer le angular.json)
-
-***  
-
-## Question 4  
-Pas de commande spécifique dans le terminal  
-  
-***   
 
 
