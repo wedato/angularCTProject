@@ -7,12 +7,20 @@
 ***
 Initialisation du dépôt
 
-1.git init 
-2.git add --all 
-3.git commit -m "Initial Commit"
-4. git clone https://o2150351@pdicost.univ-orleans.fr/git/scm/ctfram/angm3_1.git
-5. git push -u origin master
-6. Je tague la question 1
+1.git init  
+
+2.git add --all  
+
+3.git commit -m "Initial Commit"  
+
+4. git clone https://o2150351@pdicost.univ-orleans.fr/git/scm/ctfram/angm3_1.git  
+
+
+5. git push -u origin master  
+
+   
+6. Je tague la question 1  
+
 
 1.git tag -a Question1 -m 'question 1'
 2.git push origin Question1
