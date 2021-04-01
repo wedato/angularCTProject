@@ -19,7 +19,8 @@ Initialisation du dépôt
    
 6.Je tague la question 1  
 
-  1.git tag -a Question1 -m 'question 1'
+  1.git tag -a Question1 -m 'question 1'  
+
   2.git push origin Question1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
