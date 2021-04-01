@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {AnnonceService} from '../services/annonce.service';
+import {Annonce} from '../model/annonce.model';
 
 @Component({
   selector: 'app-annonce',
@@ -7,24 +9,26 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class AnnonceComponent implements OnInit {
 
-   title = 'titre de base';
-   content = 'content de base';
+   titleBase = 'titre de base';
+   contentBase = 'content de base';
+
+   annonce: Annonce;
 
 
 
 
-  constructor() { }
+  constructor(private annonceService : AnnonceService) { }
 
   ngOnInit(): void {
   }
 
 
-  geTitle(): string {
-    return this.title;
+  geTitleBase(): string {
+    return this.titleBase;
   }
 
   getContent(): string {
-    return this.content;
+    return this.contentBase;
   }
 
   editAnnonce(f) {

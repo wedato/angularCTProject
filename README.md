@@ -60,4 +60,9 @@ Pas de commande spécifique dans le terminal
   
 ***   
 
+## Question 5  
+ng g class model/Annonce --type=model
+ng g service services/annonce --skip-tests
+
+
 

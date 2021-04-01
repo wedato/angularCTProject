@@ -1,0 +1,22 @@
+
+
+<!--<div class="col-xs-12">-->
+<!--  <h1>Liste des annonces</h1>-->
+
+<!--&lt;!&ndash;  <div *ngFor="let a of lesAnnonces">&ndash;&gt;-->
+<!--&lt;!&ndash;    <a>&ndash;&gt;-->
+<!--&lt;!&ndash;      <app-annonce></app-annonce>&ndash;&gt;-->
+<!--&lt;!&ndash;    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--  <ul class="list-group">-->
+<!--&lt;!&ndash;    <app-annonce *ngFor="let annonce of lesAnnonces "&ndash;&gt;-->
+<!--&lt;!&ndash;                 [id]="annonce.id"&ndash;&gt;-->
+<!--&lt;!&ndash;    ></app-annonce>&ndash;&gt;-->
+<!--  </ul>-->
+
+<div class="col-xs-12" *ngFor="let annonce of lesAnnonces">
+  <h4>{{annonce.title}}</h4>
+  <div>{{annonce.content}}</div>
+</div>

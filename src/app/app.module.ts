@@ -6,6 +6,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import {RouterModule , Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import { ListAnnoncesComponent } from './list-annonces/list-annonces.component';
 
 
 
@@ -13,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 
 const route: Routes =  [
   { path: 'annonce' , component : AnnonceComponent},
+  {path: 'listeAnnonce' , component: ListAnnoncesComponent},
   { path: '' , component: AccueilComponent},
 ];
 
@@ -20,7 +22,8 @@ const route: Routes =  [
   declarations: [
     AppComponent,
     AccueilComponent,
-    AnnonceComponent
+    AnnonceComponent,
+    ListAnnoncesComponent
   ],
   imports: [
     BrowserModule,
