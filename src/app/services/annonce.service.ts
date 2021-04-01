@@ -12,16 +12,25 @@ import {Subject} from 'rxjs';
 export class AnnonceService {
 
   private lesAnnonces: Annonce[] = [];
+  annoncesSubject = new Subject<Annonce[]>();
 
   constructor() {
     faker.setLocale('fr');
     for (let i = 0 ; i < 5 ; i++) {
-      const annonce: Annonce = new Annonce();
-      annonce.id = i;
-      annonce.title = faker.name.firstName();
-      annonce.content = faker.lorem.sentences(4)
+      const annonce: Annonce = new Annonce(
+        faker.name.firstName() ,
+        faker.lorem.sentences(4));
+
       this.lesAnnonces.push(annonce);
     }
+  }
+
+  emitAnnonces(){
+    this.annoncesSubject.next(this.lesAnnonces.slice());
+  }
+  addAnnonce(annonce: Annonce){
+    this.lesAnnonces.push(annonce);
+    this.emitAnnonces();
   }
 
 

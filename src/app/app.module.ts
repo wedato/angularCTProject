@@ -5,8 +5,10 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import {RouterModule , Routes} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ListAnnoncesComponent } from './list-annonces/list-annonces.component';
+import {AnnonceService} from './services/annonce.service';
+import { NewAnnonceComponent } from './new-annonce/new-annonce.component';
 
 
 
@@ -15,6 +17,7 @@ import { ListAnnoncesComponent } from './list-annonces/list-annonces.component';
 const route: Routes =  [
   { path: 'annonce' , component : AnnonceComponent},
   {path: 'listeAnnonce' , component: ListAnnoncesComponent},
+  {path: 'newAnnonce' ,component: NewAnnonceComponent },
   { path: '' , component: AccueilComponent},
 ];
 
@@ -23,14 +26,18 @@ const route: Routes =  [
     AppComponent,
     AccueilComponent,
     AnnonceComponent,
-    ListAnnoncesComponent
+    ListAnnoncesComponent,
+    NewAnnonceComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(route),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AnnonceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

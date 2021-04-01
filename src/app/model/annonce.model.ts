@@ -1,5 +1,11 @@
 export class Annonce {
-  id?: number;
-  title: string;
-  content: string;
+
+
+   id: Number;
+   static idstatic = 0;
+
+
+  constructor( public title: string ,  public content: string) {
+    this.id = Annonce.idstatic++;
+  }
 }

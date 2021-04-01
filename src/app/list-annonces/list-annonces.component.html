@@ -16,7 +16,14 @@
 <!--&lt;!&ndash;    ></app-annonce>&ndash;&gt;-->
 <!--  </ul>-->
 
-<div class="col-xs-12" *ngFor="let annonce of lesAnnonces">
-  <h4>{{annonce.title}}</h4>
-  <div>{{annonce.content}}</div>
-</div>
+<!--<div class="col-xs-12" *ngFor="let annonce of lesAnnonces">-->
+<!--  <h4>{{annonce.title}}</h4>-->
+<!--  <div>{{annonce.content}}</div>-->
+<!--</div>-->
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let annonce of lesAnnonces">
+      <h3>{{annonce.title}} -- id : {{annonce.id}}</h3>
+    <p>{{annonce.content}}</p>
+  </li>
+</ul>
