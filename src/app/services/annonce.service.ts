@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+// @ts-ignore
 import {Annonce} from '../model/annonce.model';
 import * as faker from 'faker';
 import {Subject} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
-
+export interface Annonce {
+  id: number;
+  title: string;
+  content: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -15,16 +21,18 @@ export class AnnonceService {
   annoncesSubject = new Subject<Annonce[]>();
 
 
-  constructor() {
+  constructor(private http: HttpClient) {
     faker.setLocale('fr');
     for (let i = 0 ; i < 5 ; i++) {
       const annonce: Annonce = new Annonce(
         faker.name.firstName() ,
-        faker.lorem.sentences(4));
+        faker.lorem.sentences(4) );
 
       this.lesAnnonces.push(annonce);
     }
   }
+
+
 
   emitAnnonces(){
     this.annoncesSubject.next(this.lesAnnonces.slice());
@@ -45,11 +53,16 @@ export class AnnonceService {
   }
 
 
+// tslint:disable-next-line:typedef
+  getAnnonces(){
+    return this.http.get('https://localhost:8000/api/annonces')
+  }
 
 
   public getLesAnnonces(): Annonce[] {
     return this.lesAnnonces;
   }
+
 
   public getAnnonceById(id:number): Annonce | undefined {
     return this.lesAnnonces.find(a => a.id === id)

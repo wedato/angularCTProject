@@ -5,7 +5,7 @@ export class Annonce {
    static idstatic = 0;
 
 
-  constructor( public title: string ,  public content: string) {
+  constructor( public title: string ,  public content: string ) {
     this.id = Annonce.idstatic++;
   }
 }

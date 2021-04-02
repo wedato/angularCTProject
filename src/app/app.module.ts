@@ -11,6 +11,7 @@ import {AnnonceService} from './services/annonce.service';
 import { NewAnnonceComponent } from './new-annonce/new-annonce.component';
 import { EditAnnonceComponent } from './edit-annonce/edit-annonce.component';
 import { DetailAnnonceComponent } from './detail-annonce/detail-annonce.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -38,6 +39,7 @@ const route: Routes =  [
   imports: [
     BrowserModule,
     RouterModule.forRoot(route),
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],

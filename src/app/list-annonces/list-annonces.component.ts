@@ -10,6 +10,7 @@ import {Subscription} from 'rxjs';
 })
 export class ListAnnoncesComponent implements OnInit, OnDestroy {
   lesAnnonces: Annonce[];
+  lesAnnoncesDB: Annonce[];
   annoncesSubscription: Subscription;
 
 
@@ -23,6 +24,12 @@ export class ListAnnoncesComponent implements OnInit, OnDestroy {
       }
     );
     this.annonceService.emitAnnonces();
+
+    this.annonceService.getAnnonces().subscribe((data: any) => {
+      this.lesAnnoncesDB = data['hydra:member'];
+      console.log(data['hydra:member']);
+      console.log(this.lesAnnoncesDB);
+    });
   }
   getAnnonces() {
     this.lesAnnonces = this.annonceService.getLesAnnonces();

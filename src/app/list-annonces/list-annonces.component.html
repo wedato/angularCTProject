@@ -20,9 +20,25 @@
 <!--  <h4>{{annonce.title}}</h4>-->
 <!--  <div>{{annonce.content}}</div>-->
 <!--</div>-->
-
+<h1>Faker angular , no bdd</h1>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let annonce of lesAnnonces">
     <app-detail-annonce [annonce]="annonce" (deleteAnnonce)="deleteAnnonce($event)"></app-detail-annonce>
   </li>
 </ul>
+
+<h1>Ce qui vient de la bdd</h1>
+
+<div style="padding: 13px;">
+
+  <p>Nombre d'annonces : {{lesAnnonces.length}} </p>
+
+  <div *ngFor="let annonce of lesAnnoncesDB">
+    <h1>Id : {{annonce.id}} </h1>
+    <h3>title : {{annonce.title}}</h3>
+    <p>content : {{annonce.content}}</p>
+
+  </div>
+
+</div>
+
