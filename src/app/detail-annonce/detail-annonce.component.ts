@@ -1,5 +1,6 @@
 import {Component, Input, OnInit,EventEmitter, Output} from '@angular/core';
 import {Annonce} from '../model/annonce.model';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 
 
 
@@ -12,7 +13,7 @@ export class DetailAnnonceComponent implements OnInit {
 @Input() annonce : Annonce;
 @Output() deleteAnnonce = new EventEmitter<Annonce>();
 
-  constructor() { }
+  constructor(private router: Router , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,9 @@ export class DetailAnnonceComponent implements OnInit {
 
   edit(id) {
     console.log(id);
+  }
+
+  onEdit() {
+    this.router.navigate(['newAnnonce'])
   }
 }

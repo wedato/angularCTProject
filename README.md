@@ -65,5 +65,15 @@ ng g class model/Annonce --type=model
 
 ng g service services/annonce --skip-tests
 
+***
 
+## Question 6  
+ng g c new-annonce  
 
+ng g c edit-annonce  
+
+ng g c detail-annonce  
+
+ng g c list-annonce
+
+edit non fonctionelle pour l'instant

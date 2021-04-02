@@ -37,7 +37,13 @@ export class AnnonceService {
   deleteAnnonce(annonce: Annonce){
 
     this.lesAnnonces = this.lesAnnonces.filter(a => a.id !== annonce.id );
+
   }
+  updateAnnonce(index: number, newAnnonce: Annonce) {
+    this.lesAnnonces[index] = newAnnonce;
+    this.annoncesSubject.next(this.lesAnnonces.slice());
+  }
+
 
 
 
