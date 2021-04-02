@@ -19,6 +19,7 @@ export class NewAnnonceComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("hehe");
+    this.annonceService.addAnnonceToServer();
     this.initForm();
   }
 

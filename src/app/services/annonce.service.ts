@@ -42,6 +42,17 @@ export class AnnonceService {
     this.emitAnnonces();
   }
 
+  addAnnonceToServer(){
+    this.http.post('https://localhost:8000/api/annonces.json' , this.lesAnnonces).subscribe(
+      () => {
+        console.log('Enregistrement terminé !');
+      },
+      (error => {
+        console.log('Erreur ! ' + error);
+      })
+    )
+  }
+
   deleteAnnonce(annonce: Annonce){
 
     this.lesAnnonces = this.lesAnnonces.filter(a => a.id !== annonce.id );

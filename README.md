@@ -76,4 +76,13 @@ ng g c detail-annonce
 
 ng g c list-annonce
 
-edit non fonctionelle pour l'instant
+edit non fonctionelle pour l'instant  
+***
+
+## Question 8  
+Uniquement affichage de la liste du backend  
+***
+## Question 11  
+Authentification complète + authguardService des routes , redirection automatique vers login  
+Systeme d'authentification via FireBase
+

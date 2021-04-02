@@ -12,6 +12,12 @@ import { NewAnnonceComponent } from './new-annonce/new-annonce.component';
 import { EditAnnonceComponent } from './edit-annonce/edit-annonce.component';
 import { DetailAnnonceComponent } from './detail-annonce/detail-annonce.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+
+import { HeaderComponent } from './header/header.component';
+import {AuthService} from './services/auth.service';
+import {AuthGuardService} from './services/auth-guard.service';
 
 
 
@@ -19,11 +25,14 @@ import {HttpClientModule} from '@angular/common/http';
 
 
 const route: Routes =  [
-  { path: 'annonce' , component : AnnonceComponent},
-  {path: 'listeAnnonce' , component: ListAnnoncesComponent},
-  {path: 'newAnnonce' ,component: NewAnnonceComponent },
-  {path: 'editAnnonce/:id', component: EditAnnonceComponent},
-  { path: '' , component: AccueilComponent},
+  { path: 'annonce' , canActivate: [AuthGuardService], component : AnnonceComponent},
+  { path: 'auth/signin' , component : SigninComponent},
+  { path: 'auth/signup' , component : SignupComponent},
+  {path: 'listeAnnonce', canActivate: [AuthGuardService] , component: ListAnnoncesComponent},
+  {path: 'newAnnonce' ,component: NewAnnonceComponent , canActivate: [AuthGuardService]},
+  {path: 'editAnnonce/:id', component: EditAnnonceComponent, canActivate: [AuthGuardService]},
+  { path: '' , redirectTo: 'listeAnnonce', pathMatch: 'full'},
+  { path: '**' , redirectTo: 'listeAnnonce'},
 ];
 
 @NgModule({
@@ -35,6 +44,9 @@ const route: Routes =  [
     NewAnnonceComponent,
     EditAnnonceComponent,
     DetailAnnonceComponent,
+    SignupComponent,
+    SigninComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +56,9 @@ const route: Routes =  [
     ReactiveFormsModule
   ],
   providers: [
-    AnnonceService
+    AnnonceService,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
